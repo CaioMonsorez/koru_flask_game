@@ -1,0 +1,16 @@
+<!-- templates/personagens.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personagens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Lista de Personagens</h1>
+    <ul>
+        {% for personagem in personagens %}
+            <li>{{ personagem.nome }} - {{ personagem.classe }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
