@@ -1,5 +1,8 @@
 ###### **09/10/2023**
 
+
+ESTUDO BACKEND FLASK DA ESCOLA IFOOD/KORU
+
 ***O que foi feito ?***
 
 * Certifique-se de que o Python esteja instalado corretamente em seu sistema e esteja funcionando sem problemas.
