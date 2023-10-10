@@ -67,7 +67,7 @@ my-flask-app
 
 ```
 from flask import Flask
-	
+
 ```
 
 2. C**riar uma instância do Flask** : Em seguida,  criar uma instância da classe `Flask` para representar seu aplicativo.
@@ -81,3 +81,15 @@ app = Flask(__name__)
 ---
 
 **10/10/2023**
+
+
+
+Para rodar o projeto vá até a raiz do projeto e execute:
+
+```
+python personagens.py
+```
+
+O projeto vai executar no server:
+
+http://127.0.0.1:5000/personagens
