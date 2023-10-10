@@ -1,8 +1,9 @@
 /* static/css/main.css */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-}
+  background-image: url('/static/images/image.jpg'); /* Caminho da imagem desejada */
+  background-size: cover; /* Ajusta a imagem para cobrir todo o corpo */
+  background-repeat: no-repeat; /* Não repete a imagem */}
 
 h1 {
   color: #333;
