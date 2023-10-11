@@ -55,7 +55,7 @@ pip freeze > requirements.txt
 
 * `static/`: Esta pasta é usada para armazenar arquivos estáticos, como folhas de estilo CSS, JavaScript e imagens. No caso,  já tem uma subpasta `css/` para armazenar seu arquivo `main.css`.		,
 * `templates/`: Aqui é onde  deve colocar seus modelos HTML e pode renderizar esses modelos nas rotas apropriadas em seu aplicativo Flask.
-* `data.py` e `students.py`: Esses arquivos define suas classes e lógica relacionada aos dados do seu aplicativo, como modelos de dados e funções de manipulação de dados.
+* `data.py` e `app.py`: Esses arquivos define suas classes e lógica relacionada aos dados do seu aplicativo, como modelos de dados e funções de manipulação de dados.
 
 ---
 
