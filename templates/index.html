@@ -2,11 +2,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Minha Aplicação Flask</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Scape The Hole</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bem-vindo à minha aplicação Flask!</h1>
-    <p>{{ message }}</p>
+    <div class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('listar_personagens') }}">Personagens</a>
+    </div>
+
+    <div class="container">
+        <h1>Bem-vindo ao Scape The Hole</h1>
+        <p>Um jogo emocionante de aventura e desafios aguarda por você. Prepare-se para explorar um mundo misterioso e superar obstáculos.</p>
+        <a href="{{ url_for('iniciar_jogo') }}" class="btn">Jogar Agora</a>
+    </div>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Jogo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+    <style>
+        .game-container {
+        position: relative;
+        }
+
+        #truck {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        transition: 0.1s; /* Adicione uma transição suave para o movimento do caminhão */
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Meu Jogo</h1>
+    <p>Pontuação: <span id="score">{{ score }}</span></p>
+    
+    <img id="truck" src="{{ url_for('static', filename='images/caminhao.png') }}" width="100" height="100">
+    
+    <button id="reset-button">Reiniciar Jogo</button>
+
+    <script>
+        document.addEventListener("keydown", function(event) {
+            let direction = null;
+            switch (event.key) {
+                case "ArrowLeft":
+                    direction = "left";
+                    break;
+                case "ArrowRight":
+                    direction = "right";
+                    break;
+                case "ArrowUp":
+                    direction = "up";
+                    break;
+                case "ArrowDown":
+                    direction = "down";
+                    break;
+            }
+
+            if (direction) {
+                fetch('/move_truck', {
+                    method: 'POST',
+                    body: JSON.stringify({ direction: direction }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('truck').style.left = data.truck_x + "px";
+                    document.getElementById('truck').style.top = data.truck_y + "px";
+                    document.getElementById('score').textContent = data.score;
+                });
+            }
+        });
+
+        document.getElementById("reset-button").addEventListener("click", function() {
+            fetch('/reset_game', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('truck').style.left = data.truck_x + "px";
+                document.getElementById('truck').style.top = data.truck_y + "px";
+                document.getElementById('score').textContent = data.score;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -9,6 +9,7 @@ h1 {
   color: #333;
 }
 
+
 ul {
   list-style: none;
   padding: 0;
@@ -20,4 +21,31 @@ li {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+
+  
 }
+
+/* static/style.css - NAVBAR */ 
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.navbar-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item {
+  margin-right: 20px;
+}
+
+.navbar-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+

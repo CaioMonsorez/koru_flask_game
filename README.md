@@ -1,6 +1,5 @@
 ###### **09/10/2023**
 
-
 ESTUDO BACKEND FLASK DA ESCOLA IFOOD/KORU
 
 ***O que foi feito ?***
@@ -57,9 +56,9 @@ my-flask-app
    │       └── main.css
    ├── templates/
    │   ├── index.html
-   │   └── student.html
+   │   └── personagens.html
    ├── data.py
-   └── students.py
+   └── app.py
 
 * `static/`: Esta pasta é usada para armazenar arquivos estáticos, como folhas de estilo CSS, JavaScript e imagens. No caso,  já tem uma subpasta `css/` para armazenar seu arquivo `main.css`.		,
 * `templates/`: Aqui é onde  deve colocar seus modelos HTML e pode renderizar esses modelos nas rotas apropriadas em seu aplicativo Flask.
@@ -85,14 +84,12 @@ app = Flask(__name__)
 
 **10/10/2023**
 
-
-
 Para rodar o projeto vá até a raiz do projeto e execute:
 
 ```
-python personagens.py
+python app.py
 ```
 
 O projeto vai executar no server:
 
-http://127.0.0.1:5000/personagens
+http://127.0.0.1:5000/index
