@@ -68,6 +68,16 @@ my-flask-app
 
 **10/10/2023**
 
+ROTAS:
+
+
+1. `/jogo`: Rota para a página de jogo, onde os usuários podem jogar e mover o caminhão.
+2. `/move_truck`: Rota para mover o caminhão durante o jogo e atualizar a pontuação.
+3. `/reset_game`: Rota para redefinir o jogo, restaurando a posição do caminhão e a pontuação.
+4. `/index`: Rota para a página inicial que contém um botão "Jogar Agora".
+5. `/personagens`: Rota para listar personagens (você precisa fornecer a lógica e o modelo para esta página).
+
+
 Para rodar o projeto vá até a raiz do projeto e execute:
 
 ```
