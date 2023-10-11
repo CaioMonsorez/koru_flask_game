@@ -48,17 +48,10 @@ pip freeze > requirements.txt
 
 ```
 
-------------------------------------------------       ESTRUTURA DO PROJETO  -----------------------------------------------------
+--------------------------------       ESTRUTURA DO PROJETO  ----------------------------------
 
-my-flask-app
-   ├── static/
-   │   └── css/
-   │       └── main.css
-   ├── templates/
-   │   ├── index.html
-   │   └── personagens.html
-   ├── data.py
-   └── app.py
+
+![1697041226996](image/README/1697041226996.png)
 
 * `static/`: Esta pasta é usada para armazenar arquivos estáticos, como folhas de estilo CSS, JavaScript e imagens. No caso,  já tem uma subpasta `css/` para armazenar seu arquivo `main.css`.		,
 * `templates/`: Aqui é onde  deve colocar seus modelos HTML e pode renderizar esses modelos nas rotas apropriadas em seu aplicativo Flask.
@@ -70,6 +63,7 @@ my-flask-app
 
 ROTAS:
 
+As rotas foram definidas no arquivo app.py por convenção.
 
 1. `/jogo`: Rota para a página de jogo, onde os usuários podem jogar e mover o caminhão.
 2. `/move_truck`: Rota para mover o caminhão durante o jogo e atualizar a pontuação.
