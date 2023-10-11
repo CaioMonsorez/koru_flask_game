@@ -63,22 +63,6 @@ my-flask-app
 * `static/`: Esta pasta é usada para armazenar arquivos estáticos, como folhas de estilo CSS, JavaScript e imagens. No caso,  já tem uma subpasta `css/` para armazenar seu arquivo `main.css`.		,
 * `templates/`: Aqui é onde  deve colocar seus modelos HTML e pode renderizar esses modelos nas rotas apropriadas em seu aplicativo Flask.
 * `data.py` e `students.py`: Esses arquivos define suas classes e lógica relacionada aos dados do seu aplicativo, como modelos de dados e funções de manipulação de dados.
-* **Criação de rotas** - definir como as diferentes URLs do seu aplicativo web serão tratadas. As rotas são mapeadas para funções de view, que são responsáveis por processar as solicitações HTTP e retornar respostas.
-
-1. **Importar o Flask** : Primeiro, você precisa importar a classe `Flask` do módulo `flask` no seu arquivo, normalmente chamado de `app.py` ou `__init__.py`, que serve como o ponto de entrada do seu aplicativo Flask.
-
-```
-from flask import Flask
-
-```
-
-2. C**riar uma instância do Flask** : Em seguida,  criar uma instância da classe `Flask` para representar seu aplicativo.
-
-```
-
-app = Flask(__name__)
-
-```
 
 ---
 
