@@ -50,7 +50,6 @@ pip freeze > requirements.txt
 
 --------------------------------       ESTRUTURA DO PROJETO  ----------------------------------
 
-
 ![1697041226996](image/README/1697041226996.png)
 
 * `static/`: Esta pasta é usada para armazenar arquivos estáticos, como folhas de estilo CSS, JavaScript e imagens. No caso,  já tem uma subpasta `css/` para armazenar seu arquivo `main.css`.		,
@@ -70,7 +69,6 @@ As rotas foram definidas no arquivo app.py por convenção.
 3. `/reset_game`: Rota para redefinir o jogo, restaurando a posição do caminhão e a pontuação.
 4. `/index`: Rota para a página inicial que contém um botão "Jogar Agora".
 5. `/personagens`: Rota para listar personagens (você precisa fornecer a lógica e o modelo para esta página).
-
 
 Para rodar o projeto vá até a raiz do projeto e execute:
 

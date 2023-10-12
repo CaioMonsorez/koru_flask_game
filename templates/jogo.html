@@ -5,21 +5,78 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-image: url('/static/images/mapa3.png'); */
+            /* background-image: url('https://usagif.com/wp-content/uploads/upgifsok/tumbleweed-acegif-36.gif'); */
+            background-image: url('https://usagif.com/wp-content/uploads/upgifsok/tumbleweed-acegif-45.gif');
+
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            color: #333;
+        }
+
         .game-container {
-        position: relative;
+            position: relative;
         }
 
         #truck {
-        position: absolute;
-        left: 100px;
-        top: 100px;
-        transition: 0.1s; /* Adicione uma transição suave para o movimento do caminhão */
+            position: absolute;
+            left: 500px;
+            top: 60px;
+            transition: 2ms;
+        }
+
+        .bird-container {
+            position: absolute;
+            top: 50px;
+            left: 100%;
+            width: 200px;
+            height: 200px;
+            animation: moveBird 5s linear infinite;
+        }
+
+        @keyframes moveBird {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: 0;
+            }
+        }
+
+        /* Estilos para os botões */
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para a pontuação */
+        p {
+            font-size: 18px;
+            color: #555;
+            margin: 5px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
         }
     </style>
-
 </head>
 <body>
-    <h1>Mova o caminhão com as setas</h1>
+    
     <p>Pontuação: <span id="score">{{ score }}</span></p>
     
     <img id="truck" src="{{ url_for('static', filename='images/caminhao.png') }}" width="100" height="100">
@@ -27,45 +84,34 @@
     <button id="reset-button">Reiniciar Jogo</button>
     <button id="quit-button">Sair</button>
 
+    <div class="bird-container">
+        <img src="https://www.imagensanimadas.com/data/media/230/ave-passaro-imagem-animada-0645.gif" width="100" height="100" alt="Pássaro Animado">
+    </div>
+    
+</body>
 
-    <script>
-        document.addEventListener("keydown", function(event) {
-            let direction = null;
-            switch (event.key) {
-                case "ArrowLeft":
-                    direction = "left";
-                    break;
-                case "ArrowRight":
-                    direction = "right";
-                    break;
-                case "ArrowUp":
-                    direction = "up";
-                    break;
-                case "ArrowDown":
-                    direction = "down";
-                    break;
-            }
+<script>
+    document.addEventListener("keydown", function(event) {
+        let direction = null;
+        switch (event.key) {
+            case "ArrowLeft":
+                direction = "left";
+                break;
+            case "ArrowRight":
+                direction = "right";
+                break;
+            case "ArrowUp":
+                direction = "up";
+                break;
+            case "ArrowDown":
+                direction = "down";
+                break;
+        }
 
-            if (direction) {
-                fetch('/move_truck', {
-                    method: 'POST',
-                    body: JSON.stringify({ direction: direction }),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('truck').style.left = data.truck_x + "px";
-                    document.getElementById('truck').style.top = data.truck_y + "px";
-                    document.getElementById('score').textContent = data.score;
-                });
-            }
-        });
-
-        document.getElementById("reset-button").addEventListener("click", function() {
-            fetch('/reset_game', {
+        if (direction) {
+            fetch('/move_truck', {
                 method: 'POST',
+                body: JSON.stringify({ direction: direction }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -76,11 +122,26 @@
                 document.getElementById('truck').style.top = data.truck_y + "px";
                 document.getElementById('score').textContent = data.score;
             });
+        }
+    });
+
+    document.getElementById("reset-button").addEventListener("click", function() {
+        fetch('/reset_game', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('truck').style.left = data.truck_x + "px";
+            document.getElementById('truck').style.top = data.truck_y + "px";
+            document.getElementById('score').textContent = data.score;
         });
-        document.getElementById("quit-button").addEventListener("click", function() {
-            // Redirecionar para a página inicial
-            window.location.href = "/";
-        });
-  </script>
-</body>
+    });
+    document.getElementById("quit-button").addEventListener("click", function() {
+        // Redirecionar para a página inicial
+        window.location.href = "/";
+    });
+</script>
 </html>

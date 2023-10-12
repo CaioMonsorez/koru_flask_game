@@ -1,7 +1,7 @@
 /* static/css/main.css */
 body {
   font-family: Arial, sans-serif;
-  background-image: url('/static/images/image.jpg'); /* Caminho da imagem desejada */
+  background-image: url('https://i.gifer.com/3aYu.gif'); /* Caminho da imagem desejada */
   background-size: cover; /* Ajusta a imagem para cobrir todo o corpo */
   background-repeat: no-repeat; /* Não repete a imagem */}
 

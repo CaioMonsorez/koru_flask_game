@@ -25,19 +25,20 @@ def move_truck():
     direction = request.json['direction']
     step = 10
 
-    if direction == 'left':
+    if direction == 'left' and truck_x > 0:
         truck_x -= step
-    elif direction == 'right':
+    elif direction == 'right' and truck_x < 1000:
         truck_x += step
-    elif direction == 'up':
+    elif direction == 'up' and truck_y > 0:
         truck_y -= step
-    elif direction == 'down':
+    elif direction == 'down' and truck_y < 1000:
         truck_y += step
 
     # Atualizar a pontuação (por exemplo, +10 a cada movimento)
     score += 10
 
     return jsonify({'truck_x': truck_x, 'truck_y': truck_y, 'score': score})
+
 
 @app.route('/reset_game', methods=['POST'])
 def reset_game():
