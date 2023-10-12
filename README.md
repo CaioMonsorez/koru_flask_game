@@ -79,3 +79,7 @@ python app.py
 O projeto vai executar no server:
 
 http://127.0.0.1:5000/
+
+Incluindo o .gitignore para que o git não suba arquivos indesejados.
+
+Exemplo: cache e venv
