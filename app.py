@@ -1,6 +1,7 @@
 # personagens.py
 from flask import Flask, render_template, request, jsonify
 from data import personagens
+import data
 
 app = Flask(__name__)
 
@@ -58,6 +59,11 @@ def home():
 @app.route('/personagens')
 def listar_personagens():
     return render_template('personagens.html', personagens=personagens)
+
+@app.route('/lista')
+def lista_personagens():
+    dicionario = data.retornar_personagens()
+    return render_template("listaindex.html", dados=dicionario)
 
 if __name__ == '__main__':
     app.run(debug=True)
