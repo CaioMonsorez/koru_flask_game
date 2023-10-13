@@ -52,5 +52,53 @@ personagens = {
         'ataque': 98,
         'imagem': 'https://i.pinimg.com/originals/a6/21/0f/a6210fd59c68852a3143ccde924e6cf2.gif'
     },
+    7: {
+        'nome': 'Goku',
+        'classe': 'Saiyajin',
+        'nivel': 85,
+        'vida': 95,
+        'ataque': 94,
+        'imagem': 'https://i.gifer.com/origin/38/38fe168959a1c6ad51693c7e028389e0_w200.gif'
+    },
+    8: {
+        'nome': 'Piccolo',
+        'classe': 'Saiyajin',
+        'nivel': 82,
+        'vida': 96,
+        'ataque': 92,
+        'imagem': 'https://media.tenor.com/XscLOxYAmbMAAAAj/dragonball-sprite.gif'
+    },
+    9: {
+        'nome': 'Bills',
+        'classe': 'Saiyajin',
+        'nivel': 87,
+        'vida': 94,
+        'ataque': 92,
+        'imagem': 'https://media.tenor.com/pbx_WkDZpQcAAAAj/beerus-dbz.gif'
+    },
+    10: {
+        'nome': 'Naruto',
+        'classe': 'Ninja',
+        'nivel': 85,
+        'vida': 95,
+        'ataque': 94,
+        'imagem': 'https://images.gamebanana.com/img/ico/sprays/naruto.gif'
+    },
+    11: {
+        'nome': 'Sasuke',
+        'classe': 'Ninja',
+        'nivel': 90,
+        'vida': 92,
+        'ataque': 96,
+        'imagem': 'https://images.gamebanana.com/img/ico/sprays/sasuke.gif'
+    },
+    12: {
+        'nome': 'Sakura',
+        'classe': 'Ninja',
+        'nivel': 89,
+        'vida': 93,
+        'ataque': 97,
+        'imagem': 'https://images.gamebanana.com/img/ico/sprays/sakura-running.gif'
+    },
     # Adicione mais personagens aqui, se necessário
 }
