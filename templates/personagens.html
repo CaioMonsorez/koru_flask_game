@@ -5,12 +5,84 @@
     <title>Personagens</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+<style>
+    
+    .container {
+        max-width: 1000px;
+        margin: 0 auto; /* Centraliza horizontalmente */
+        padding: 90px;
+        background-color: #d69c4fb8;
+        border-radius: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
+        height: 50vh; /* Ocupa a altura total da janela do navegador */
+    }
+    .container1{
+        max-width: 70%;
+            
+    }
+</style>
 <body>
-    <h1>Lista de Personagens</h1>
-    <ul>
-        {% for personagem in personagens %}
-            <li>{{ personagem.nome }} - {{ personagem.classe }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container1">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>    
+
+    <div class="container">
+        
+        <br>
+        <br>
+        <br>
+        <h1 style="color: #522a2a; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Selecione o Personagem</h1>
+        <ul style="display: flex; list-style-type: none; padding: 0;">
+            {% for id, personagem in personagens.items() %}
+                <li style="margin-right: 30px; margin-left: 30px; background-color: #f2a253; box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); border-radius: 20px; padding: 15px;">
+                    <label>
+                        <input type="radio" name="personagem_id" value="{{ id }}">
+                        <img src="{{ personagem.imagem }}" alt="{{ personagem.nome }} - Imagem do Personagem" style="max-width: 90px; max-height: 90px;">
+                        <div class="info">
+                            <h2>{{ personagem.nome }}</h2>
+                            <p>Classe: {{ personagem.classe }}</p>
+                            <p>Nível: {{ personagem.nivel }}</p>
+                        </div>
+                    </label>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Elemento para exibir a mensagem selecionada -->
+        <p id="selecionado-msg" style="color: #522a2a; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);"></p>
+        <div class="btn-container">
+            <a href="{{ url_for('home') }}" class="btn">Voltar</a>
+        </div>
+        <div class="btn-container">
+            <a href="{{ url_for('iniciar_jogo') }}" class="btn">Começar Jogo</a>
+        </div>
+        
+
+        <script>
+            // Selecione todos os elementos de entrada de rádio
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+
+            // Adicione um ouvinte de evento para cada botão de rádio
+            radioButtons.forEach(button => {
+                button.addEventListener('change', function () {
+                    // Quando um botão de rádio é selecionado, exiba a mensagem
+                    const selectedPersonagem = document.querySelector('input[name="personagem_id"]:checked');
+                    const selectedPersonagemName = selectedPersonagem ? selectedPersonagem.parentNode.querySelector("h2").textContent : null;
+                    const message = selectedPersonagemName ? `Você selecionou ${selectedPersonagemName}!` : '';
+                    document.getElementById('selecionado-msg').textContent = message;
+                    
+                });
+            });
+        </script>
+    </div>
+    
 </body>
 </html>

@@ -6,9 +6,14 @@ body {
   background-repeat: no-repeat; /* Não repete a imagem */}
 
 h1 {
-  color: #333;
+  color: #e9e5e5;
 }
 
+.container {
+  max-width: 1200px; /* Defina a largura máxima desejada em pixels ou outra unidade de medida */
+  margin: 0 auto; /* Centralize o conteúdo horizontalmente */
+  padding: 20px; /* Adicione algum espaço em volta do conteúdo */
+}
 
 ul {
   list-style: none;
@@ -21,31 +26,22 @@ li {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-
-  
 }
 
-/* static/style.css - NAVBAR */ 
-.navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
+.btn {
+  background-color: #a4390cd8; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno */
+  border: none; /* Remover a borda */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Ícone de cursor de mão ao passar o mouse */
+  font-size: 18px; /* Tamanho da fonte */
+  text-decoration: none; /* Remover sublinhado de links */
+  display: inline-block; /* Tornar o botão em linha com o texto */
+  margin: 10px; /* Margem externa para espaçamento */
 }
 
-.navbar-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
+.btn:hover {
+  background-color: #a4390cd8; /* Cor de fundo */
+  ; /* Cor de fundo ao passar o mouse */
 }
-
-.navbar-item {
-  margin-right: 20px;
-}
-
-.navbar-item a {
-  color: #fff;
-  text-decoration: none;
-}
-
-
-
