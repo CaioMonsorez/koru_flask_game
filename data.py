@@ -102,3 +102,40 @@ personagens = {
     },
     # Adicione mais personagens aqui, se necessário
 }
+
+#---------------------------------------------------------------------------------------------------------------
+# 1.FUNÇÕES CRUD:
+# Script para simular funcionalidades do banco de dados.
+
+# 1.1 FUNÇÃO PARA GERAR PERSONAGEM COM O PRÓXIMO ID DO DICIONÁRIO
+def gerar_id():
+  id = len(personagens) + 1
+  return id
+#---------------------------------------------------------------------------------------------------------------
+# 1.2 FUNÇÃO PARA CRIAR PERSONAGEM
+def criar_personagem(nome, classe, nivel, vida, ataque, imagem):
+  personagens[gerar_id()] = {"nome":nome, "classe":classe, "nivel":nivel, "vida":vida, "ataque":ataque, "imagem":imagem}
+
+# 1.3 FUNÇÃO PARA ATUALIZAR DADOS DO PERSONAGEM
+def atualizar_personagem(id, dados_personagem:dict):
+  personagens[i] = dados_personagem
+
+# 1.4 FUNÇÃO PARA REMOVER UM PERSONAGEM
+def remover_personagem(id:int):
+  del personagens[id]
+
+#---------------------------------------------------------------------------------------------------------------
+# 1.5 FUNÇÃO RETORNAR UM ÚNICO PERSONAGEM
+def retornar_personagem(id:int):
+  if id in personagens.keys():
+    return personagens[id] 
+  else:
+    return {}
+  
+# 1.6 FUNÇÃO PARA RETORNAR TODOS OS PERSONAGENS
+def retornar_personagens():
+  return personagens
+
+
+
+
