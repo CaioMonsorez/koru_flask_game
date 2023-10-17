@@ -65,5 +65,10 @@ def lista_personagens():
     dicionario = data.retornar_personagens()
     return render_template("listaindex.html", dados=dicionario)
 
+@app.route('/cadastropersonagem')
+def cadastro_personagens():
+    dicionario = data.retornar_personagens()
+    return render_template("cadastro.html", dados=dicionario)
+
 if __name__ == '__main__':
     app.run(debug=True)
