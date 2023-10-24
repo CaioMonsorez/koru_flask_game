@@ -1,34 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Index</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- NÃO TEM LINK DE CSS NENHUM -> VERIFICAR COMO ESTÁ A PÁGINA-->
+
 {% extends 'homebar.html' %}
 
 {% block content %}
   <div class="container mt-3">
+    
     <h1>Lista de Itens</h1>
-    <a href="{{ url_for('cadastro_personagens') }}" class="btn btn-primary">Adicionar</a>
+    <a href="#" class="btn btn-primary">Adicinar</a>
     <hr>
     <table class="table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Classe</th>
-          <th>Nível</th>
-          <th>Vida</th>
-          <th>Ataque</th>
-          <th>Imagem</th>
-          <th></th>
+          <tr>ID </tr>
+          <tr>Nome </tr>
+          <tr>Classe </tr>
+          <tr>Nivel </tr>
+          <tr>Vida </tr>
+          <tr>Ataque </tr>
+          <tr>Imagem </tr>
+          <tr></tr>
         </tr>
       </thead>
       <tbody>
         {% for id, personagem in dados.items() %}
         <tr>
-          <td>{{ id }}</td>
-          <td>{{ personagem['nome'] }}</td>
-          <td>{{ personagem['classe'] }}</td>
-          <td>{{ personagem['nivel'] }}</td>
-          <td>{{ personagem['vida'] }}</td>
-          <td>{{ personagem['ataque'] }}</td>
-          <td><img style="max-width: 90px; max-height: 90px" src="{{ personagem['imagem'] }}" alt="thumbnail" class="img-thumbnail"></td>
-          <td><a href="">Editar</a></td>
+          <td>{{id}}</td>
+          <td>{{personagem['nome']}}</td>
+          <td>{{personagem['classe']}}</td>
+          <td>{{personagem['nivel']}}</td>
+          <td>{{personagem['vida']}}</td>
+          <td>{{personagem['ataque']}}</td>
+
+          <td><img class="pagListaIndex" src="{{personagem['imagem']}}" alt="thumbnail" class="img-thumbnail"></td>
+
+          <td><a href=""></a>Editar</td>
         </tr>
         {% endfor %}
       </tbody>
