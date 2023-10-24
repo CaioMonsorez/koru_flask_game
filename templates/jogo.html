@@ -1,97 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Jogo</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            /* background-image: url('/static/images/mapa3.png'); */
-            /* background-image: url('https://usagif.com/wp-content/uploads/upgifsok/tumbleweed-acegif-36.gif'); */
-            /* background-image: url('https://usagif.com/wp-content/uploads/upgifsok/tumbleweed-acegif-45.gif'); */
 
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        .game-container {
-            position: relative;
-        }
-
-        #truck {
-            position: absolute;
-            left: 500px;
-            top: 60px;
-            transition: 2ms;
-        }
-
-        .bird-container {
-            position: absolute;
-            top: 50px;
-            left: 100%;
-            width: 200px;
-            height: 200px;
-            animation: moveBird 5s linear infinite;
-        }
-
-        @keyframes moveBird {
-            0% {
-                left: 100%;
-            }
-            100% {
-                left: 0;
-            }
-        }
-
-        /* Estilos para os botões */
-        button {
-            background-color: #a4390cd8; /* Cor de fundo */
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-            margin: 5px;
-        }
-
-        button:hover {
-         background-color: #a4390cd8; /* Cor de fundo */
-        }
-
-        /* Estilos para a pontuação */
-        p {
-            font-size: 18px;
-            color: #555;
-            margin: 5px;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
-        }
-    </style>
 </head>
-<body>
+<body class="body_pagJogo">
     
-    <p>Pontuação: <span id="score">{{ score }}</span></p>
+    <p class="p_pagJogo">Pontuação: <span id="score">{{ score }}</span></p>
     
-    <img id="truck" src="{{ url_for('static', filename='images/caminhao.png') }}" width="100" height="100">
+    <!-- acho que alguem já alterou esta imagem -->
+    <img id="truck" src="{{ url_for('static', filename='images/caminhao.png') }}">
     
-    <button id="reset-button">Reiniciar Jogo</button>
-    <button id="quit-button">Sair</button>
+    <button class="btn" id="reset-button">Reiniciar Jogo</button>
+    <button class="btn" id="quit-button">Sair</button>
 
     <div class="bird-container">
-        <img src="https://www.imagensanimadas.com/data/media/230/ave-passaro-imagem-animada-0645.gif" width="100" height="100" alt="Pássaro Animado">
+        <!-- acho que alguem já alterou esta imagem -->
+        <img src="https://www.imagensanimadas.com/data/media/230/ave-passaro-imagem-animada-0645.gif" alt="Pássaro Animado">
     </div>
     
 </body>
 
 <script>
+    console.log("Script loaded");
+    // teste de posição acima
     document.addEventListener("keydown", function(event) {
+        console.log("Key pressed:", event.key);
+        // teste de posição acima
         let direction = null;
         switch (event.key) {
             case "ArrowLeft":
@@ -126,6 +65,8 @@
     });
 
     document.getElementById("reset-button").addEventListener("click", function() {
+        console.log("Reset button clicked");
+        // teste de posição acima
         fetch('/reset_game', {
             method: 'POST',
             headers: {
@@ -141,6 +82,8 @@
     });
     document.getElementById("quit-button").addEventListener("click", function() {
         // Redirecionar para a página inicial
+        console.log("Quit button clicked");
+        // teste de posição acima
         window.location.href = "/";
     });
 </script>

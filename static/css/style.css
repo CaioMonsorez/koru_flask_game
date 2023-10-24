@@ -1,25 +1,25 @@
 /* static/css/main.css */
+/* ESTILO GERAL - TODAS AS PÁGINAS */
+
 body {
   font-family: Arial, sans-serif;
-  background-image: url('https://i.gifer.com/3aYu.gif'); /* Caminho da imagem desejada */
+  background-image: url('https://i.gifer.com/3aYu.gif');  /* Caminho da imagem desejada */
   background-size: cover; /* Ajusta a imagem para cobrir todo o corpo */
-  background-repeat: no-repeat; /* Não repete a imagem */}
+  background-repeat: no-repeat; /* Não repete a imagem */
+}
 
 h1 {
   color: #e9e5e5;
 }
-
 .container {
   max-width: 1200px; /* Defina a largura máxima desejada em pixels ou outra unidade de medida */
   margin: 0 auto; /* Centralize o conteúdo horizontalmente */
   padding: 20px; /* Adicione algum espaço em volta do conteúdo */
 }
-
 ul {
   list-style: none;
   padding: 0;
 }
-
 li {
   margin-bottom: 10px;
   background-color: #fff;
@@ -27,7 +27,6 @@ li {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
-
 .btn {
   background-color: #a4390cd8; /* Cor de fundo */
   color: #fff; /* Cor do texto */
@@ -37,11 +36,165 @@ li {
   cursor: pointer; /* Ícone de cursor de mão ao passar o mouse */
   font-size: 18px; /* Tamanho da fonte */
   text-decoration: none; /* Remover sublinhado de links */
+  /* estes dois não tinha no botao pag index */
   display: inline-block; /* Tornar o botão em linha com o texto */
   margin: 10px; /* Margem externa para espaçamento */
 }
-
 .btn:hover {
   background-color: #a4390cd8; /* Cor de fundo */
   ; /* Cor de fundo ao passar o mouse */
 }
+
+/* ESTILO ESPECÍFICO - PÁGINA INDEX */
+.body_pagIndex {
+  text-align: center;
+
+}
+.h1_pagIndex {
+  font-size: 36px;
+  color: #f3e9e9;
+}
+.p_pagIndex {
+  font-size: 18px;
+  color: #f8f0f0;
+}
+
+.container-pagIndex {
+  max-width: 1000px;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 90px;
+  background-color: #d69c4fb8;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  height: 50vh; /* Ocupa a altura total da janela do navegador */
+}
+.btn-container {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os botões */
+}
+
+/*****************************************************/
+/* ESTILO ESPECÍFICO - PÁGINA JOGO */
+
+.body_pagJogo{
+  font-size: 18px;
+  color: #555;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+.p_pagJogo {
+  color: #333;
+  /* Não encontrei nada usando essa tag na pag jogo */
+}
+.game-container {
+  position: relative;
+}
+#truck {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 100px;
+  top: 220px;
+  transition: 2ms;
+}
+.bird-container {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 200px;
+  left: 100%;
+  animation: moveBird 5s linear infinite;
+}
+@keyframes moveBird {
+  0% {
+      left: 100%;
+  }
+  100% {
+      left: 0;
+  }
+}
+
+/*****************************************************/
+/* ESTILO ESPECÍFICO - PÁGINA LISTAINDEX */
+
+.pagListaIndex {
+  max-width: 90px;
+  max-height: 90px;
+}
+/* coloquei duas classes rever */
+img .img-thumbnail {
+  max-width: 90px;
+  max-height: 90px;
+}
+/*****************************************************/
+/* ESTILO ESPECÍFICO - PÁGINA PERSONAGENS */
+
+.container-pagPersonagens {
+  max-width: 1000px;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 90px;
+  background-color: #d69c4fb8;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  /*height: 50vh; /* Ocupa a altura total da janela do navegador */
+  overflow: hidden;
+
+}
+.container1-pagPersonagens {
+  max-width: 100%;
+  justify-content: center;
+/* Marca o tamanho do container */
+  margin-top: 20px; /* Adiciona espaçamento superior de 20 pixels */
+  margin-bottom: 20px; /* Adiciona espaçamento inferior de 20 pixels */
+}
+
+.h1_pagPersonagens {
+  color: #522a2a;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* justify-content: center; */
+}
+
+.ul_pagPersonagens {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.li_pagPersonagens {
+  /* alterei de 20% para 30% MM */
+  width: calc(
+    20% - 60px
+  ); /* Defina a largura para 20% - ajuste o valor conforme necessário */
+  margin-right: 30px;
+  margin-left: 30px;
+  background-color: #f2a253;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  padding: 15px;
+
+}
+
+.img_pagPersonagem {
+  max-width: 90px; 
+  max-height: 90px;
+}
+
+#selecionado-msg {
+  color: #522a2a;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+ 

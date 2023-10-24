@@ -1,68 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Scape The Hole</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scape the Hole</title>
+    <!-- retirei o link css -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto; /* Centraliza horizontalmente */
-            padding: 90px;
-            background-color: #d69c4fb8;
-            border-radius: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Centraliza verticalmente */
-            align-items: center; /* Centraliza horizontalmente */
-            height: 50vh; /* Ocupa a altura total da janela do navegador */
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #f3e9e9;
-        }
-
-        p {
-            font-size: 18px;
-            color: #f8f0f0;
-        }
-
-        .btn-container {
-            display: flex;
-            gap: 20px; /* Espaçamento entre os botões */
-        }
-
-        .btn {
-            background-color: #a4390cd8; /* Cor de fundo */
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-            text-decoration: none; /* Remova o sublinhado do link */
-        }
-
-        .btn:hover {
-            background-color: #a4390cd8; /* Cor de fundo */
-        }
-    </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Bem-vindo ao Scape The Hole</h1>
-        <p>Um jogo emocionante de aventura e desafios aguarda por você. Prepare-se para explorar um mundo misterioso e superar obstáculos.</p>
+<body class="body_pagIndex">
+    <div class="container-pagIndex">
+        <h1 class="h1_pagIndex">Bem-vindo ao Scape The Hole</h1>
+        <p class="p_pagIndex">Um jogo emocionante de aventura e desafios aguarda por você. Prepare-se para explorar um mundo misterioso e superar obstáculos.</p>
         <div class="btn-container">
             <a href="{{ url_for('listar_personagens') }}" class="btn">Selecione o Personagem</a>
             <a href="{{ url_for('iniciar_jogo') }}" class="btn">Jogar Agora</a>
-            <a href="{{ url_for('lista_personagens') }}" class="btn">Tabela de Personagens</a>
         </div>
     </div>
 </body>
