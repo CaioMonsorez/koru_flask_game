@@ -77,6 +77,174 @@ li {
   gap: 20px; /* Espaçamento entre os botões */
 }
 
+
+/*****************************************************/
+/* ESTILO ESPECÍFICO - MENU HAMBURGUER E NAV BAR */
+
+#main {
+  margin-left: 250px;
+}
+
+/* Hamburguer */
+i.menu-mobile {
+  position: fixed;
+  color: #fff;
+  background-color: #a4390cd8;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  border-radius: 4rem;
+  cursor: pointer;
+  z-index: 10;
+  width: 45px;
+  height: 45px;
+  /* Para esconder o Hamburguer em Tela Grande */
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-nav-active {
+  overflow: hidden;
+}
+
+.menu-nav-active #header {
+  left: 0;
+}
+
+/* Mídia Querys */
+@media (max-width: 1024px) {
+  #header {
+      left: -250px;
+  }
+  i.menu-mobile{
+      display: flex;
+  }
+  section#inicio h1{
+      font-size: 2rem;
+  }
+  section#inicio span#subtitle {
+      margin-right: 0;
+      font-size: 1rem;
+  }
+  #main {
+      margin-left: 0;
+  }
+}
+
+
+
+
+#headerMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #f2a253;
+  overflow: auto;
+  width: 250px;
+  transition: all ease-in-out 0.5s;
+  padding: 0 10px;
+  z-index: 9997;
+}
+
+#headerMenu .profile img {
+  margin: 10px auto;
+  display: block;
+  width: 150px;
+  border: 2px solid #a4390cd8;
+  border-radius: 20%;
+  background-color: #ddd;
+}
+
+#headerMenu .profile h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+}
+
+#headerMenu nav ul li {
+  position: relative;
+}
+
+#headerMenu nav ul li a i {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  font-size: 18px;
+}
+
+#headerMenu nav ul li {
+  background-color: #a4390cd8;
+  border: none;
+  cursor: pointer;
+}
+
+#headerMenu .profile .social-links a {
+  font-size: 1rem;
+  background: #d69c4fb8;
+  color: #a4390cd8;
+  /* padding: 0.6rem; */
+  padding: auto;
+  margin-bottom: 25px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  transition: 0.3s;
+  text-decoration: none;
+  /* centralizar no html (bootstrap) */
+}
+
+#headerMenu .profile .social-links a:hover {
+  background: #fff;
+}
+
+.nav-menu {
+  padding: 1.5rem;
+}
+
+/* rever */
+.nav-menu a,
+.nav-menu a:focus {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    transition: 0.3s;
+    font-size: 15px;
+}
+.nav-menu a i,
+.nav-menu a:focus i {
+    font-size: 24px;
+    padding-right: 0.8rem;
+    color: #fff;
+}
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover > a {
+    text-decoration: none;
+    color: rgb(87, 184, 179);
+}
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i,
+.nav-menu li:hover > a i {
+    text-decoration: none;
+    color: rgb(87, 184, 179);
+}
+
+/* rever acima */
+
+
+/* Cor do Botão -> #a4390cd8  */
+/* Container -> #d69c4fb8 */
+/* Intermediaria -> #f2a253 */
+
+
+
+
+
 /*****************************************************/
 /* ESTILO ESPECÍFICO - PÁGINA JOGO */
 

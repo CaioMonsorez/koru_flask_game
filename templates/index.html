@@ -3,19 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>Scape the Hole</title>
     <!-- retirei o link css -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
 <body class="body_pagIndex">
-    <div class="container-pagIndex">
-        <h1 class="h1_pagIndex">Bem-vindo ao Scape The Hole</h1>
-        <p class="p_pagIndex">Um jogo emocionante de aventura e desafios aguarda por você. Prepare-se para explorar um mundo misterioso e superar obstáculos.</p>
-        <div class="btn-container">
-            <a href="{{ url_for('listar_personagens') }}" class="btn">Selecione o Personagem</a>
-            <a href="{{ url_for('iniciar_jogo') }}" class="btn">Jogar Agora</a>
-        </div>
-    </div>
+
+    <i class="bi bi-list menu-mobile"></i>
+
+    <aside id="headerMenu">
+        <section class="profile">
+            <img src="../static/images/caminhao.png" alt="Foto do Caminhão">
+            <h1>Scape The Hole</h1>
+            <div class="social-links mt-6 text-center">
+                <a target="_blank" href="https://github.com/CaioMonsorez/koru_flask_game">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a>
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a>
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a>
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+        </section>
+        <nav id="navbar" class="nav-menu">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#container-pagIndex"><i>Inicio</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i>Opções</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i>Minha Conta</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i>Configurações</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i>Contato</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i>Sair</i></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main id="main">
+        <section id="inicio" class="inicio">
+            <div id="container-pagIndex" class="container-pagIndex">
+                <h1 class="h1_pagIndex">Bem-vindo ao Scape The Hole</h1>
+                <span id="subtitle"></span>
+                <p class="p_pagIndex">Um jogo emocionante de aventura e desafios aguarda por você. Prepare-se para explorar um mundo misterioso e superar obstáculos.</p>
+                <div class="btn-container">
+                    <a href="{{ url_for('listar_personagens') }}" class="btn">Selecione o Personagem</a>
+                    <a href="{{ url_for('iniciar_jogo') }}" class="btn">Jogar Agora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/script.js"></script>
 </body>
 </html>
